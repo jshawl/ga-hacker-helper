@@ -25,6 +25,8 @@ router.route("/logout")
   .get(usersController.getLogout)
 
 // For implementing user authentication -- thank you Tyler for sharing this code!
+// Presumably a dev could override the return value and pretend they are authenticated,
+// since the value is being read client-side.
 router.route('/auth').get(function(req,res){
   if (req.user){
     res.json({isAuthenticated : "true"});
@@ -52,6 +54,6 @@ router.delete("/topics/:topicId/links/:id", topicsController.removelink);
 router.get("/ajax", topicsController.ajax);
 
 
-
+// excellent code comments!!
 
 module.exports = router;

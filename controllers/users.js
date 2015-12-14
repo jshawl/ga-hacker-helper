@@ -47,3 +47,6 @@ module.exports = {
   postSignup: postSignup,
   getLogout: getLogout,
 }
+
+// recommend consistency between this controller and the others,
+// both in file naming and usage of anonymous functions

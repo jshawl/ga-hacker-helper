@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
   var url = "http://localhost:4000.json";
+  // remove localhost to prevent deployment bug
   var request = $.ajax({
     url: url,
     type: "GET",

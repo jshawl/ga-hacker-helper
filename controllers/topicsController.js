@@ -30,6 +30,7 @@ var topicsController = {
       description: req.body.description,
       imageUrl: req.body.imageUrl
     });
+    // check if currentUser, store in topic document
     topic.save(function(err) {
       if (!err) {
         res.redirect("topics");
@@ -48,6 +49,7 @@ var topicsController = {
 
   delete: function(req, res) {
     var id = req.params.id;
+    // also consider restricting who can delete based on doc.user and currentUser
     TopicModel.findByIdAndRemove(id, function(err, doc) {
       res.redirect("/topics");
     });
@@ -72,6 +74,7 @@ var topicsController = {
       })
     })
   },
+  // move below methods to linksController
   addlink: function(req, res) {
     TopicModel.findById(req.params.id, function(err, docs) {
       docs.links.push(new LinkModel({
@@ -79,7 +82,7 @@ var topicsController = {
         title: req.body.title,
         summary: req.body.summary,
         source: req.body.source
-      }))
+      })) // does this work? without explicitly saving?
       docs.save(function(err) {
         if (!err) {
           res.redirect("/topics/" + req.params.id)

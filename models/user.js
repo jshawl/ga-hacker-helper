@@ -6,7 +6,7 @@ var User = mongoose.Schema({
     email        : String,
     password     : String,
   }
-});
+}); // recommend moving this to db/schema or moving schema definitions to model, but be consistent.
 
 User.methods.encrypt = function(password){
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);

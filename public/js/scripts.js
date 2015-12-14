@@ -1,3 +1,4 @@
+// what's the difference between this file and indexscripts.js?
 $(document).ready(function() {
   var url = "/topics.json"
   var request = $.ajax({

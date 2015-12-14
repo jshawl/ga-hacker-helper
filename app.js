@@ -37,7 +37,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser());
 
-app.use(session({ secret: 'PROJECT-3' }));
+app.use(session({ secret: 'PROJECT-3' })); // consider moving secret to env variable
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());

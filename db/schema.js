@@ -24,3 +24,5 @@ var TopicSchema = new Schema({
 // setting models in mongoose utilizing schemas defined above
 var LinkModel = mongoose.model("Link", LinkSchema);
 var TopicModel = mongoose.model("Topic", TopicSchema);
+
+// module.exports ?

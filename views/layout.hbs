@@ -8,6 +8,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- Ajax page scripts -->
   <script type="text/javascript" src="/js/scripts.js"></script>
+  <!-- recommend moving scripts to closing body tag to prevent blocking HTML content -->
   <!-- custom css -->
   <!-- Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -52,6 +53,8 @@
   <ul id="slide-out" class="side-nav">
     <li><a href="/">Home</i></a></li>
     <li><a href="/ajax">One Pager</i></a></li>
+    <!-- ^^ recommend a feature branch that implements this on the home page.
+    was nice to see during presentation but please remove link until feature is complete -->
     {{#if currentUser}}
     <li><a href="/logout">Logout</a></li>
       {{else}}

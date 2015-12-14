@@ -5,3 +5,5 @@ var linksController = {
 
 }
 module.exports = linksController;
+
+// delete this file, or better, move link methods from topicsController here.
