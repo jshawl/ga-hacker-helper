@@ -43,4 +43,41 @@ $(document).ready(function() {
   }).fail(function(response){
     console.log("Ajax get request failed.");
   });
+
+  function Topic(){
+
+  }
+
+  Topic.fetch = function(callback){
+    $.getJSON("/topics.json", function(response){
+      callback(response.topics);
+    });
+  }
+
+  function TopicView(model){
+    var source   = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    return template(model);
+  }
+
+  Topic.fetch(function(topics){
+    console.log("Got topics", topics);
+    topics.forEach(function(topic){
+      var $topic = TopicView(topic)
+      $(".js-topics-wrapper").append($topic)
+    })
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
